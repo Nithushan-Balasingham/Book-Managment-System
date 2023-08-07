@@ -272,7 +272,6 @@ const updateUser = asyncHandler(async (req, res) => {
     }
   }
 
-  // Hash the password before updating (if it exists in the request body)
   if (req.body.password) {
     req.body.password = await bcrypt.hash(req.body.password, 10);
   }

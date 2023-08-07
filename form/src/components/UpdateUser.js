@@ -8,7 +8,7 @@ export default function UpdateUser() {
   const [lname, setLname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isPasswordModified, setIsPasswordModified] = useState(false); // New state to track password modification
+  const [isPasswordModified, setIsPasswordModified] = useState(false); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,8 +18,7 @@ export default function UpdateUser() {
       setLname(data.lname);
       setEmail(data.email);
       setPassword(data.password);
-      setIsPasswordModified(false); // Reset the password modification state when data is fetched
-      console.log(data);
+      setIsPasswordModified(false); 
     };
     getUserById();
   }, [id]);
@@ -81,7 +80,7 @@ export default function UpdateUser() {
           placeholder='Enter Password'
           onChange={(e) => {
             setPassword(e.target.value);
-            setIsPasswordModified(true); // Set the password modification state to true when the input changes
+            setIsPasswordModified(true);
           }}
         />
         <div className='flex items-center justify-center'>

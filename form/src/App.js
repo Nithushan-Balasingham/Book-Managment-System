@@ -8,7 +8,6 @@ import EmailVerfify from './components/EmailVerfify';
 import ResetPassword from './components/ResetPassword';
 import UpdatePasswordForm from './components/ResetFinal';
 import EmailSend from './components/EmailSend';
-import Testing from './components/Testing';
 import PrivateRoutes from './components/ProtectedRoutes';
 import Update from './components/UpdateUser';
 import AllBooks from './components/AllBooks';
@@ -41,22 +40,18 @@ function App() {
                 <Route path="/reset" element={<ResetPassword />} />
                 <Route path="/update/:email" element={<UpdatePasswordForm />} />
                 <Route path="/otp" element={<EmailSend />} />
-                <Route path='/allbooks' element={<AllBooks/>}/>
-                <Route path='/ownbook' element={<OwnBook/>}/>
-                <Route path='/admin' element={<AdminView/>}/>
-                <Route path='allbooks/update/:id' element={<UpdateBook/>}/>
-                <Route path='users/update/:id' element={<UpdateBook/>}/>
-                <Route path='ownbook/update/:id' element={<UpdateBook/>}/>
-                <Route path='/update/user/:id' element={<Update/>}/>
-                <Route path='/addBook' element={<NewBook/>}/>
-
-
+               
                 <Route element={<PrivateRoutes />}>
-                  {/* These routes are protected and require authentication */}
-                  <Route path="/test" element={<Testing />} />
+                  <Route path='/addBook' element={<NewBook/>}/>
+                  <Route path='/allbooks' element={<AllBooks/>}/>
+                  <Route path='/admin' element={<AdminView/>}/>
                   <Route path="/details" element={<UserDetail />} />
+                  <Route path='/ownbook' element={<OwnBook/>}/>
+                  <Route path='users/update/:id' element={<UpdateBook/>}/>
+                  <Route path='ownbook/update/:id' element={<UpdateBook/>}/>
+                  <Route path='/update/user/:id' element={<Update/>}/>
+                  <Route path='allbooks/update/:id' element={<UpdateBook/>}/>
                 </Route>
-                {/* Redirect to the home page if no valid route matches */}
                 <Route path="/" element={<Navigate to="/sign-in" replace={true} />} />
               </Routes>
             </div>

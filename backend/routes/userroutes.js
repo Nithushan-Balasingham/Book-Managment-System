@@ -1,8 +1,7 @@
 const express = require("express")
 const router = express.Router()
 
-const { addUser, loginUser,getUserToken, resetPasword, updatedPassword, sendMessage, getAllUsers, updateUser, getSingelUser, deleteUser, deleteUserAccount, validToken} = require("../controllers/usercontroller")
-const { addPost, verifyUser, adminVerify, getbooks, getAll } = require("../controllers/bookcontroller")
+const { addUser, loginUser,getUserToken, resetPasword, updatedPassword, sendMessage, getAllUsers, updateUser, getSingelUser, deleteUserAccount, validToken} = require("../controllers/usercontroller")
 const validateToken = require("../middleware/validateToken")
 
 router.route('/register').post(addUser)

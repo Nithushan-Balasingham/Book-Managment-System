@@ -11,7 +11,6 @@ const validateToken = asyncHandler(async (req, res, next) => {
             return("Expired")
           }
           req.user = decoded.user
-          // res.json({email:req.user.email,fname:req.user.fname,err,id:req.user.id,role:req.user.role})
           next();
         
       })

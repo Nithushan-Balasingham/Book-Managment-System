@@ -20,8 +20,8 @@ export default function OwnBook() {
 
     axios.get('/api/books', config)
       .then((response) => {
-        const booksData = response.data; // Assuming response.data is the array of book objects
-        setPosts(booksData); // Set the entire array of book objects as the posts state
+        const booksData = response.data;
+        setPosts(booksData); 
         response.data.forEach(book => console.log(book.user_id._id));
 
         if (booksData.length === 0) {
@@ -119,7 +119,7 @@ export default function OwnBook() {
                 </div>
             );
           } else {
-            return null; // Skip rendering if the book doesn't belong to the user
+            return null;
           }
         })}
       </div>

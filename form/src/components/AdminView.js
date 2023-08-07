@@ -172,7 +172,9 @@ export default function AdminView() {
           ))}
         </div>
       ) : (
-        <p>Not Authorized</p>
+        <div className='flex items-center justify-center'>
+          <p className='text-5xl text-green-400'>Not Authorized</p>
+        </div>
       )}
     </div>
   </div>
